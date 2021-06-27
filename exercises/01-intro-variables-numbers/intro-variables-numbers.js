@@ -1,10 +1,11 @@
 function myName() {
   // Create a variable called myName
+  const myName = "Noe";
   return myName;
 }
 
 function setTeachersNames(teachersName) {
-  const teachers = null; // Change this line only
+  let teachers = null; // Change this line only
   teachers = teachersName; //  <- this is invalid because teachers is a const
 
   return teachers;
@@ -12,24 +13,26 @@ function setTeachersNames(teachersName) {
 
 /*** return the sum of both arguments  ***/
 function add(a, b) {
-  let sum;
+  let sum = a+b;
 
   return sum;
 }
 
 /*** Using the increment operator, add a year to the argument and make me older */
 function ageMeByAYear(age) {
+  age++;
   return age;
 }
 
 /*** Using the decrement operator make me age decrement by a year  ***/
 function makeMeYoungerByAYear(age) {
+  age--;
   return age;
 }
 
 /** Take the argument that will be a string and return an integer  */
 function convertStringToInt(str) {
-  let int;
+  let int = parseInt(str);
   return int;
 }
 
@@ -43,14 +46,14 @@ function convertStringToInt(str) {
  *
  */
 function getTheCharacterPosition(name, letter) {
-  let characterPosition;
+  let characterPosition = name.indexOf(letter);
   return characterPosition;
 }
 
 /** Take the argument and return the length of the argument */
 
 function stringLength(str) {
-  let strLength;
+  let strLength = str.length;
 
   return strLength;
 }
@@ -63,7 +66,7 @@ function stringLength(str) {
  */
 
 function getLastCharacter(str) {
-  let lastCharacter;
+  let lastCharacter = str[str.length-1];
 
   return lastCharacter;
 }
@@ -81,9 +84,9 @@ function getLastCharacter(str) {
  */
 
 function getLastWordInPlaceName(place) {
-  let newPlace;
-
-  return newPlace;
+    const index = place.indexOf(" ");   
+    let newPlace = place.substring(index + 1);
+    return newPlace;
 }
 
 /*** A person just got married and they need their last name replaced.
@@ -99,7 +102,9 @@ function getLastWordInPlaceName(place) {
  */
 
 function replaceLastName(fullName, newLastName) {
-  let newFullName;
+  const index = fullName.indexOf(" ");
+  let  lastName = fullName.substring(index +1);
+  let newFullName = fullName.replace(lastName, newLastName);
   return newFullName;
 }
 
@@ -109,10 +114,14 @@ function replaceLastName(fullName, newLastName) {
  */
 
 function capitalizeLastName(fullName) {
-  let capitalizeLastName;
+  const index = fullName.indexOf(" ");
+  let  lastName = fullName.substring(index + 1);
+  let capLastName = lastName.replace(lastName[0], lastName[0].toUpperCase());
+  let capitalizeLastName = fullName.replace(lastName,capLastName);
 
   return capitalizeLastName;
 }
+
 
 /**
  * Ignore me. This is for the tests
