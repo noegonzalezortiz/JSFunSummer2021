@@ -1,3 +1,5 @@
+import { interfaces } from "mocha";
+
 /***
  * Change below so that it will also compare data types.
  * ```javascript
@@ -6,10 +8,11 @@
  * ```
  */
 function compareEquality(a, b) {
-  if (a == b) {
+  if (typeof a === typeof b) {
     return "Equal";
   }
-  return "Not Equal";
+  else;
+    return "Not Equal";
 }
 
 /** The function should use the strict inequality operator
@@ -26,9 +29,9 @@ function compareEquality(a, b) {
 
 function testStrictNotEqual(a, b) {
   // Only Change Code Below this Line
-  if (undefined) {
-    // Only Change Code Above this Line
 
+  if (typeof a !== typeof b) {
+    // Only Change Code Above this Line
     return "Not Equal";
   }
   return "Equal";
@@ -39,9 +42,18 @@ function testStrictNotEqual(a, b) {
  * This is someone who is between 13 and 19 years old.
  * Use the logical && operator
  */
+
+const isTeen = true;
+const notTeen = false;
+
 function isTeenager(age) {
-  return; // Return something here
+  if (age >=13 && age <=19){
+    return isTeen; // Return something here
 }
+else (age < 13 && age >19);{
+  return notTeen;}
+}
+ 
 
 /**
  * "stringOrNumber" should be true if stringOrNumber is:
@@ -51,23 +63,38 @@ function isTeenager(age) {
  * Hint: See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isNaN
  */
 function isNumeric(stringOrNumber) {
-  return; // Return something here
-}
+
+  if (parseInt(stringOrNumber) || parseFloat(stringOrNumber)) {
+    return true;}
+  else{ isNaN(stringOrNumber)  ; 
+  return false; 
+}}
+
 
 /***
  *  Using conditional logic compare both arguments and return the largest argument
  */
 
 function getLargerNumber(arg1, arg2) {
-  let largestNumber;
-
-  return largestNumber;
+  let largestNumber = 0;
+  if (arg1 > arg2){
+    largestNumber = arg1;
+    return largestNumber;
+  }
+    else (largestNumber = arg2);{
+      return largestNumber;
+    }
 }
 
 /** Using the modulus operator determine if the argument is an even or odd number */
 
 function isEvenOrOdd(isEven) {
-  return; // return something here
+  if (isEven % 2 === 0){
+    return "Is Even";
+} 
+  else (isEven % 2 === 1);{
+    return "Is Odd";
+  }// return something here
 }
 
 /****
@@ -87,7 +114,41 @@ function isEvenOrOdd(isEven) {
  * 
  *  *****/
 
-function caseInSwitch(num) {}
+function caseInSwitch(num) {
+  let answer = " ";
+    switch (num){
+    case 1:
+      answer = "ONE";
+      break;
+    case 2:
+      answer = "TWO";
+      break;
+    case 3:
+      answer = "THREE";
+      break;
+    case 4:
+      answer = "FOUR";
+      break;
+    case 5:
+      answer = "FIVE";
+      break;
+    case 6:
+      answer = "SIX";
+      break;
+    case 7:
+      answer = "SEVEN";
+      break;
+    case 8:
+      answer = "EIGHT";
+      break;
+    case 9:
+      answer = "NINE";
+      break;
+    default:
+      return "PLEASE TRY AGAIN";
+  }
+  return answer;
+  }
 
 export {
   isEvenOrOdd,

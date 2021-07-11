@@ -83,6 +83,8 @@ function getLastCharacter(str) {
  *    returns Diego
  */
 
+
+
 function getLastWordInPlaceName(place) {
     const index = place.indexOf(" ");   
     let newPlace = place.substring(index + 1);
@@ -97,7 +99,7 @@ function getLastWordInPlaceName(place) {
  *    newLastName = Smith
  *    returned value === Emily Smith
  *
- *
+ *   lastName = Rose we sliced it from the fullName
  *
  */
 
