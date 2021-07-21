@@ -6,7 +6,9 @@
  * @return {object}
  */
 
-const createDogObject = () => {};
+const createDogObject = () => {
+  myDog = {name: " ", legs: , tails, owner:}
+};
 
 /**
  *  CreateGraduateObject function takes in several arguments and combines them together in one object.
