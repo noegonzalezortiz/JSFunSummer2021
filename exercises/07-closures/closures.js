@@ -1,3 +1,5 @@
+import { multiplier } from "../08-currying/currying";
+
 /**
  * This function should return an object with the property "hello".
  * "hello" should be a method (or function) that accepts a string "name" as an argument
@@ -14,7 +16,15 @@
  *
  * (This is technically not a closure. It is here to prepare you for the next problems.)
  */
-const greeter = () => {};
+const greeter = () => {
+  const greet = {
+    hello:(name) => {
+         return "Hello " + name + "!";
+      }
+    };
+      return greet;
+    };
+
 
 /**
  * Use closures to complete this exercise.
@@ -22,21 +32,36 @@ const greeter = () => {};
  * @returns {Object} an object that has two methods. See comments below.
  */
 const calculator = () => {
+  let sum = 0; 
+  
   /**
    * Create a private variable called "sum"
    * @var {number}
    */
+  
   /**
    * Return an object that has two methods:
    *
    * 1. The first is a "setter" function that a.) accepts a parameter of type number and
    *    b.) adds that number to the "sum" above.
    * @param {number}
-   *
+   */ 
+  
+
+   /*
    * 2. The second function is a "getter" function
    * that should return the value of "sum" above.
    * @returns {number} the value of sum
    */
+  return { 
+    method1: (num) => {
+      sum = sum + num;
+      console.log(sum);
+    },
+    method2: () => {
+      return sum;
+    } 
+  };
 };
 
 /**
@@ -65,6 +90,21 @@ const calculator = () => {
  * guessRound2(1); // "No more guesses. The answer was 0"
  */
 
-const guessingGame = (numberOfRounds) => {};
+ const guessingGame = (numberOfRounds) => {
+  const answer = Math.floor(Math.random() * (10 + 1));
+  let count = 0;
+
+  return (guess) => {
+    count += 1;
+    if (count >= numberOfRounds)
+      return "No more guesses. The answer was " + answer;
+    else if (guess < answer) return "You're too low!";
+    else if (guess > answer) return "You're too high!";
+    else if (guess === answer) return "You got it!";
+  };
+};
+
+
+
 
 export { greeter, calculator, guessingGame };
