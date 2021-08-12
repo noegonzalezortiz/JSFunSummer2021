@@ -21,8 +21,14 @@
  * console.log( calculate(7, 3, subtract) ); // 4
  */
 
-const calculate = (num1, num2, callback) => {};
-
+const calculate = (num1, num2, callback) => callback(num1,num2);
+  const mult = (num1, num2) => {
+   return num1 * num2;
+  };
+ const div = (num1, num2) => {
+   return num1 / num2;
+  };
+  
 /**
  * Create a function called "printer".
  * Given a student name, it should format and prints out the value in a visually appealing way
@@ -33,6 +39,10 @@ const calculate = (num1, num2, callback) => {};
  *  - Matina
  * @param {string} name instructor name
  */
+
+const printer = (name) => {
+ console.log( "-" + name);
+};
 
 /**
  * NOTE that the test will use the "printer" function that you completed in the problem above.
@@ -46,7 +56,13 @@ const calculate = (num1, num2, callback) => {};
  * // - Jamal
  * // - Matina
  */
-const printNames = (array, callback) => {};
+const printNames = (array, callback) => {
+  for (let i=0; i<array.length;i++){
+   return callback(array[i]);
+  }
+  };
+
+
 
 /**
  * Returns the first number in an array that meets a condition.
@@ -73,6 +89,7 @@ const printNames = (array, callback) => {};
  */
 
 const findFirst = (arrayOfNum, callback) => {};
+
 
 /**
  * Ignore everything below this line. It is for the tests.
