@@ -5,7 +5,19 @@
  * @param {function} callback
  */
 const forEach = (arr, callback) => {
-  arr.forEach(callback);
+  let newArr =[];
+  for(let i=0; i < arr.length; i++){
+    newArr.push(callback(arr[i],i,arr));
+  }
+  return newArr;
+};
+
+const findFirst = (arrayOfNum, callback) => {
+  for(let i=0; arrayOfNum.length; i++){
+    if (callback(arrayOfNum[i])){
+      return arrayOfNum[i];
+    }
+  }
 };
 
 /**

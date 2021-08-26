@@ -5,9 +5,7 @@ function myName() {
 }
 
 function setTeachersNames(teachersName) {
-  let teachers = null; // Change this line only
-  teachers = teachersName; //  <- this is invalid because teachers is a const
-
+  const teachers = teachersName; // Change this line only
   return teachers;
 }
 

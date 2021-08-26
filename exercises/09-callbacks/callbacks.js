@@ -40,8 +40,8 @@ const calculate = (num1, num2, callback) => callback(num1,num2);
  * @param {string} name instructor name
  */
 
-const printer = (name) => {
- console.log( "-" + name);
+ const printer = (name) => {
+  console.log(`- ${name}\n`);
 };
 
 /**
@@ -56,11 +56,11 @@ const printer = (name) => {
  * // - Jamal
  * // - Matina
  */
-const printNames = (array, callback) => {
-  for (let i=0; i<array.length;i++){
-   return callback(array[i]);
+ const printNames = (array, callback) => {
+  for (let item of array) {
+    callback(item);
   }
-  };
+};
 
 
 
@@ -88,7 +88,13 @@ const printNames = (array, callback) => {
  * console.log( findFirst([4, 500, 30, 2], isNumberTwoDigits) ) // 30
  */
 
-const findFirst = (arrayOfNum, callback) => {};
+const findFirst = (arrayOfNum, callback) => {
+  for(let i=0; arrayOfNum.length; i++){
+    if (callback(arrayOfNum[i])){
+      return arrayOfNum[i];
+    }
+  }
+};
 
 
 /**

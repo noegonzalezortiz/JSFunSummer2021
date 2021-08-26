@@ -56,11 +56,8 @@ const calculator = () => {
   return { 
     method1: (num) => {
       sum = sum + num;
-      console.log(sum);
-    },
-    method2: () => {
-      return sum;
-    } 
+      },
+    method2: () => sum,
   };
 };
 

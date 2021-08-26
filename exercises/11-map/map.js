@@ -6,8 +6,12 @@
  * @returns {array} new array
  */
 const map = (arr, callback) => {
-return arr.map(callback);
-  
+  let newArr =[];
+  for (let i = 0; i < arr.length; i++){
+    const mapping = callback(arr[i],i, arr);
+    newArr.push(mapping);
+  }
+  return newArr;
 };
 
 /**
@@ -39,10 +43,7 @@ return arr.map((num) => num * 2);
  */
 const extractKey = (arr, key) => {
   return arr.map((item) =>{
-    console.log(key);
-    console.log(item);
-    console.log(item[key]);
-    return item[key];
+     return item[key];
   });
 };
 
