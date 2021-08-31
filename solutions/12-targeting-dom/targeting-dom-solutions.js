@@ -31,8 +31,8 @@
   const cells = document.querySelectorAll("#myRow > .col");
   cells.forEach((cell) => console.log("cell", cell));
 
-  const dataAttributes = document.querySelectorAll("[data-target]");
-  dataAttributes.forEach((dataAttribute) =>
+  const attributes = document.querySelectorAll("[data-target]");
+  attributes.forEach((dataAttribute) =>
     console.log("dataAttribute", dataAttribute)
   );
 })();

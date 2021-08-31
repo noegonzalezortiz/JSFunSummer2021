@@ -5,4 +5,14 @@
  */
 (function () {
   // Put your answers in here
+  let alert1 = document.querySelector('.alert.alert-danger');
+  alert1.setAttribute("role", "alert");
+
+  let alert2 = document.querySelector('.alert.alert-warning a');
+  alert2.setAttribute("href", "https://developer.mozilla.org/en-US/docs/Web/JavaScript");
+
+  alert2.removeAttribute("target");
+
+
+  
 })();

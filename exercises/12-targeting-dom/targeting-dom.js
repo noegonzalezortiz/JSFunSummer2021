@@ -12,4 +12,27 @@
  */
 (function () {
   // Put your answers in here
+  const liNum1 = document.querySelector("li");
+    console.log("firstLi", liNum1);
+
+  const id = document.querySelector("#myId");
+    console.log("myId", id);
+
+  const allLi = document.querySelectorAll("li");
+  for (let i = 0; i < allLi.length; i++) {
+    console.log("allLi", allLi[i]);
+  }
+
+  const bgWarning = document.querySelectorAll(".bg-warning");
+  for (let li of bgWarning) {
+    console.log(".bg-warning", li);
+  }
+
+  const cells = document.querySelectorAll("#myRow > .col");
+    cells.forEach((cell) => console.log("cell", cell));
+
+  const dataAttributes = document.querySelectorAll("[data-target]");
+    dataAttributes.forEach((attribute) =>
+    console.log("dataAttribute", attribute)
+    );
 })();
